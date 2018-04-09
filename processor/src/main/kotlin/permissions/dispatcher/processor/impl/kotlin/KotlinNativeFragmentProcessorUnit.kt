@@ -5,6 +5,7 @@ import permissions.dispatcher.processor.util.*
 import javax.annotation.processing.Messager
 import javax.lang.model.type.TypeMirror
 
+@Deprecated("android.app.Fragment became deprecated in Android P.")
 class KotlinNativeFragmentProcessorUnit(messager: Messager) : KotlinBaseProcessorUnit(messager) {
 
     override fun getTargetType(): TypeMirror = typeMirrorOf("android.app.Fragment")

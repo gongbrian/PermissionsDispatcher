@@ -5,6 +5,7 @@ import permissions.dispatcher.processor.util.*
 import javax.annotation.processing.Messager
 import javax.lang.model.type.TypeMirror
 
+@Deprecated("android.app.Fragment became deprecated in Android P.")
 class JavaNativeFragmentProcessorUnit(messager: Messager) : JavaBaseProcessorUnit(messager) {
 
     override fun getTargetType(): TypeMirror {
@@ -12,7 +13,7 @@ class JavaNativeFragmentProcessorUnit(messager: Messager) : JavaBaseProcessorUni
     }
 
     override fun getActivityName(targetParam: String): String {
-        return targetParam + ".getActivity()"
+        return "$targetParam.getActivity()"
     }
 
     override fun addShouldShowRequestPermissionRationaleCondition(builder: MethodSpec.Builder, targetParam: String, permissionField: String, isPositiveCondition: Boolean) {
